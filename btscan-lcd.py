@@ -185,7 +185,7 @@ def bt_irq(event, data):
 ble = bluetooth.BLE() 
 ble.active('active')
 ble.irq(bt_irq)
-ble.gap_scan(0)
+ble.gap_scan(0,1000)
 
 while (1):
     time.sleep(1)
@@ -205,4 +205,5 @@ while (1):
         else: color = LCD.red
         LCD.fill_rect(150,y,120+rssi,8,color)
         y += 10
-    LCD.show()       
+    LCD.show()
+    devices = {}
